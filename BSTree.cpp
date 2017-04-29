@@ -6,10 +6,10 @@ BSTree::BSTree() {
 	root = NULL;
 }
 
-
 BSTree::~BSTree() {
  deleteAllNode(root);
 }
+
 void BSTree::copyTree(node *thisRoot, node *inRoot)
 {
     if(inRoot == NULL)
@@ -52,7 +52,7 @@ bool BSTree::insert(string x, char y, int z) {
            {parent->right = in;}
     }
     return true;
-	}
+}
 
     // Deletes the first node with a matching name and initial from the tree.
     // Returns true if the deletion was successful (that is, if the customer was found).
@@ -167,6 +167,7 @@ bool BSTree::remove(string x, char y) {
     }
     return false; //If we somehow got here something went wrong, should never reach this point.
 }
+
 vector<Customer> BSTree::rangeSearch(string x, char y, string z, char a) {
     vector<Customer>* customerVector = new vector<Customer>();
     inOrderVectorAdd(root, x,y,z,a, customerVector);
@@ -205,6 +206,7 @@ void BSTree::inOrderP(node* p)
     }
     else return;
 }
+
 void BSTree::deleteAllNode(node* p) 
 {
     if(p != NULL) //Empty tree, no need to delete
@@ -244,5 +246,3 @@ bool BSTree::search(string x, char y){
 bool BSTree::isEmpty(){
 	return root == NULL;
 }
-
-
